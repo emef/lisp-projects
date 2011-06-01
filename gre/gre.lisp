@@ -13,7 +13,7 @@
   (let ((name (parameter "name")))
     (if name
         (format nil "Hi, <b>~a</b>" name)
-        "Name: <form action='/test' method='get'><input type='text' name='name' /><input type='submit' name='submit' /></form>")))
+        "Name: <form action='' method='get'><input type='text' name='name' /><input type='submit' name='submit' /></form>")))
 
 (defun about-page ()
   "<h1>Hunchentoot Demo</h1>This is a very simple demonstration of the Hunchentoot webserver.")
