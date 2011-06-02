@@ -7,7 +7,18 @@
 
 (setq *dispatch-table*
       `(,(create-prefix-dispatcher "/test" 'test-page)
-         ,(create-prefix-dispatcher "/about" 'about-page)))
+         ,(create-prefix-dispatcher "/about" 'about-page)
+         ,(create-prefix-dispatcher "/test/3" (handler-w-args "\/test\/(\\d+)" 'try-it))))
+         
+(defun handler-w-args (reg-uri fn)
+  `(lambda ()
+      (apply fn (scan-to-strings reg-uri (request-uri *request*)))))
+    
+(defmacro uri-let ())
+
+(defun try-it (str)
+  str)
+  
 
 (defun test-page ()
   (let ((name (parameter "name")))
