@@ -4,7 +4,7 @@
 
 (declaim (optimize (speed 0) (safety 3) (debug 3)))
 
-(defconstant +static-dir+ #P"/Users/mattforbes/src/lisp/gre/static/")
+(defparameter *static-dir* #P"/Users/mattforbes/src/lisp/gre/static/")
 
 (setq *message-log-pathname* #P"messages.log")
 (setq *access-log-pathname* #P"access.log")
@@ -17,7 +17,7 @@
     ("\/del_word" del-word-hdl)
     ("\/get_words" get-words-hdl)
     ("\/" main-hdl)))
-  (push (create-folder-dispatcher-and-handler "/static/" +static-dir+) *dispatch-table*)
+  (push (create-folder-dispatcher-and-handler "/static/" *static-dir*) *dispatch-table*)
   (start (make-instance 'acceptor :port port)))
 
 ;;
