@@ -1,0 +1,1443 @@
+[2011-06-01 20:36:30 [ERROR]] hi logger
+[2011-06-01 20:36:30 [ERROR]] oh hi
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002A18869}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002A187A1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002A187A1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<SIMPLE-ERROR {1002A182A1}>)
+5: (SIGNAL #<SIMPLE-ERROR {1002A182A1}>)[:EXTERNAL]
+6: (ERROR "oh hi")[:EXTERNAL]
+7: ((LAMBDA ()))
+8: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+     (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+    #<unavailable argument>
+    #<unavailable argument>
+    #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+    #<HUNCHENTOOT:REQUEST {1002A12B31}>)
+9: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+    #<unavailable argument>
+    #<unavailable argument>
+    #<HUNCHENTOOT:REQUEST {1002A12B31}>)
+10: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1002A0C241}>)
+11: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1002A0C241}>)
+12: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+13: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+14: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+15: (SWANK::EVAL-REGION
+     "(gre:start-server)
+")
+16: ((LAMBDA ()))
+17: (SWANK::TRACK-PACKAGE #<CLOSURE (LAMBDA #) {10029B39D9}>)
+18: (SWANK::CALL-WITH-RETRY-RESTART
+     "Retry SLIME REPL evaluation request."
+     #<CLOSURE (LAMBDA #) {10029B38F9}>)
+19: (SWANK::CALL-WITH-BUFFER-SYNTAX NIL #<CLOSURE (LAMBDA #) {10029B38C9}>)
+20: (SWANK::REPL-EVAL
+     "(gre:start-server)
+")
+21: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (SWANK:LISTENER-EVAL "(gre:start-server)
+")
+     #<NULL-LEXENV>)
+22: (SWANK:EVAL-FOR-EMACS
+     (SWANK:LISTENER-EVAL "(gre:start-server)
+")
+     "COMMON-LISP-USER"
+     77)
+23: (SWANK::PROCESS-REQUESTS T)
+24: ((LAMBDA ()))
+25: ((LAMBDA ()))
+26: (SWANK-BACKEND::CALL-WITH-BREAK-HOOK
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {100296A149}>)
+27: ((FLET SWANK-BACKEND:CALL-WITH-DEBUGGER-HOOK)
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {100296A149}>)
+28: (SWANK::CALL-WITH-BINDINGS
+     ((*STANDARD-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*STANDARD-INPUT* . #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>)
+      (*TRACE-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*ERROR-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*DEBUG-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>)
+      (*QUERY-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>)
+      (*TERMINAL-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>))
+     #<CLOSURE (LAMBDA #) {100296A169}>)
+29: (SWANK::HANDLE-REQUESTS #<SWANK::CONNECTION {1004BC0941}> T)
+30: ((LABELS SWANK-BACKEND::RUN) 7)
+31: (SB-IMPL::SUB-SUB-SERVE-EVENT NIL NIL)
+32: (SB-IMPL::SUB-SERVE-EVENT NIL NIL NIL)
+33: (SB-SYS:WAIT-UNTIL-FD-USABLE 0 :INPUT NIL)
+34: (SB-IMPL::REFILL-INPUT-BUFFER
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>)
+35: (SB-IMPL::INPUT-CHAR/UTF-8
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT)
+36: (READ-CHAR
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+37: (READ-CHAR
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+38: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     T)
+39: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     NIL)
+40: (READ #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}> NIL (NIL) NIL)
+41: (SB-IMPL::REPL-READ-FORM-FUN
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     #<unavailable argument>)
+42: (SB-IMPL::REPL-FUN NIL)
+43: ((LAMBDA ()))
+44: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {10038EEB09}>)
+45: (SB-IMPL::TOPLEVEL-REPL NIL)
+46: (SB-IMPL::TOPLEVEL-INIT)
+47: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-01 20:36:30 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:37:07 [INFO]] hi logger
+[2011-06-01 20:37:07 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:37:10 [INFO]] hi logger
+[2011-06-01 20:37:10 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:37:12 [INFO]] hi logger
+[2011-06-01 20:37:12 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:38:42 [INFO]] /test/4
+[2011-06-01 20:38:42 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:39:07 [INFO]] /test/4
+[2011-06-01 20:39:07 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:39:12 [INFO]] /test/5
+[2011-06-01 20:39:12 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:40:32 [INFO]] /test/5
+[2011-06-01 20:40:32 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:40:36 [INFO]] /test2/5
+[2011-06-01 20:40:36 [ERROR]] The value 'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003C804A9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003C803E1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003C803E1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003C7FE41}>)
+5: (SIGNAL #<TYPE-ERROR {1003C7FE41}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001BC000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001BC000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 20:40:36 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:41:10 [INFO]] /test2/5
+[2011-06-01 20:41:10 [ERROR]] The value #'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002E2AE39}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002E2AD71}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002E2AD71}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1002E2A7E1}>)
+5: (SIGNAL #<TYPE-ERROR {1002E2A7E1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001BE000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001BE000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 20:41:10 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:47:58 [INFO]] /test2/5
+[2011-06-01 20:47:58 [ERROR]] The value 'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003A9B6F9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003A9B631}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003A9B631}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003A9B0A1}>)
+5: (SIGNAL #<TYPE-ERROR {1003A9B0A1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001C6000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001C6000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 20:47:58 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:54:43 [INFO]] /test2/5
+[2011-06-01 20:54:43 [ERROR]] The value #'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {10033AFE39}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {10033AFD71}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {10033AFD71}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {10033AF7E1}>)
+5: (SIGNAL #<TYPE-ERROR {10033AF7E1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001C8000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001C8000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 20:54:43 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:57:53 [ERROR]] #'GRE::TRY-IT fell through ETYPECASE expression.
+Wanted one of (STRING SIMPLE-STRING).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003F8BC99}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003F8BBD1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003F8BBD1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<SB-KERNEL:CASE-FAILURE {1003F8B661}>)
+5: (SIGNAL #<SB-KERNEL:CASE-FAILURE {1003F8B661}>)[:EXTERNAL]
+6: (ERROR SB-KERNEL:CASE-FAILURE)[:EXTERNAL]
+7: (SB-FORMAT::%FORMAT
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1003F89721}>
+    #'GRE::TRY-IT
+    NIL
+    NIL)
+8: ((LAMBDA
+        (STREAM
+         &OPTIONAL
+         (#:FORMAT-ARG47
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 2))
+         (#:FORMAT-ARG48
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 9))
+         (#:FORMAT-ARG49
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+         (#:FORMAT-ARG50
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+         &REST SB-FORMAT::ARGS))
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1003F89721}>
+    "2011-06-01 20:57:53"
+    :INFO
+    #'GRE::TRY-IT
+    NIL)
+9: (FORMAT
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1003F89721}>
+    #<FUNCTION (LAMBDA #) {1005DD61C9}>)[:EXTERNAL]
+10: (HUNCHENTOOT::LOG-MESSAGE-TO-FILE :INFO #'GRE::TRY-IT)[:EXTERNAL]
+11: ((LAMBDA ()))
+12: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+      (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<HUNCHENTOOT:REQUEST {1003F85B31}>)
+13: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:REQUEST {1003F85B31}>)
+14: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1003F7D161}>)
+15: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1003F7D161}>)
+16: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+17: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+18: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+19: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (PROGN (QUICKLISP-CLIENT:QUICKLOAD "gre") (GRE:START-SERVER))
+     #<NULL-LEXENV>)
+20: (SWANK::EVAL-REGION
+     "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+21: ((LAMBDA ()))
+22: (SWANK::TRACK-PACKAGE #<CLOSURE (LAMBDA #) {1004151299}>)
+23: (SWANK::CALL-WITH-RETRY-RESTART
+     "Retry SLIME REPL evaluation request."
+     #<CLOSURE (LAMBDA #) {10041511B9}>)
+24: (SWANK::CALL-WITH-BUFFER-SYNTAX NIL #<CLOSURE (LAMBDA #) {1004151189}>)
+25: (SWANK::REPL-EVAL
+     "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+26: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (SWANK:LISTENER-EVAL "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+     #<NULL-LEXENV>)
+27: (SWANK:EVAL-FOR-EMACS
+     (SWANK:LISTENER-EVAL "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+     "COMMON-LISP-USER"
+     381)
+28: (SWANK::PROCESS-REQUESTS T)
+29: ((LAMBDA ()))
+30: ((LAMBDA ()))
+31: (SWANK-BACKEND::CALL-WITH-BREAK-HOOK
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {100414DFE9}>)
+32: ((FLET SWANK-BACKEND:CALL-WITH-DEBUGGER-HOOK)
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {100414DFE9}>)
+33: (SWANK::CALL-WITH-BINDINGS
+     ((*STANDARD-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*STANDARD-INPUT* . #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>)
+      (*TRACE-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*ERROR-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*DEBUG-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>)
+      (*QUERY-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>)
+      (*TERMINAL-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>))
+     #<CLOSURE (LAMBDA #) {100414E009}>)
+34: (SWANK::HANDLE-REQUESTS #<SWANK::CONNECTION {1004BC0941}> T)
+35: ((LABELS SWANK-BACKEND::RUN) 7)
+36: (SB-IMPL::SUB-SUB-SERVE-EVENT NIL NIL)
+37: (SB-IMPL::SUB-SERVE-EVENT NIL NIL NIL)
+38: (SB-SYS:WAIT-UNTIL-FD-USABLE 0 :INPUT NIL)
+39: (SB-IMPL::REFILL-INPUT-BUFFER
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>)
+40: (SB-IMPL::INPUT-CHAR/UTF-8
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT)
+41: (READ-CHAR
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+42: (READ-CHAR
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+43: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     T)
+44: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     NIL)
+45: (READ #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}> NIL (NIL) NIL)
+46: (SB-IMPL::REPL-READ-FORM-FUN
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     #<unavailable argument>)
+47: (SB-IMPL::REPL-FUN NIL)
+48: ((LAMBDA ()))
+49: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {10038EEB09}>)
+50: (SB-IMPL::TOPLEVEL-REPL NIL)
+51: (SB-IMPL::TOPLEVEL-INIT)
+52: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-01 20:57:53 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 20:59:50 [ERROR]] error in FORMAT: string ended before directive was found
+  ~a~
+    ^
+while processing indirect format string:
+  [~A~@[ [~A]~]] ~?~%
+                  ^
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003AA4C59}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003AA4B91}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003AA4B91}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<SB-FORMAT:FORMAT-ERROR {1003AA4641}>)
+5: (SIGNAL #<SB-FORMAT:FORMAT-ERROR {1003AA4641}>)[:EXTERNAL]
+6: (ERROR SB-FORMAT:FORMAT-ERROR)[:EXTERNAL]
+7: ((FLET #:LAMBDA51) #<SB-FORMAT:FORMAT-ERROR {1003AA40C1}>)
+8: (SIGNAL #<SB-FORMAT:FORMAT-ERROR {1003AA40C1}>)[:EXTERNAL]
+9: (ERROR SB-FORMAT:FORMAT-ERROR)[:EXTERNAL]
+10: ((FLET SB-FORMAT::GET-CHAR))
+11: (SB-FORMAT::PARSE-DIRECTIVE "~a~" 2)
+12: (SB-FORMAT::TOKENIZE-CONTROL-STRING "~a~")
+13: (SB-FORMAT::%FORMAT
+     #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1003AA2161}>
+     "~a~"
+     (#'GRE::TRY-IT)
+     (#'GRE::TRY-IT))
+14: ((LAMBDA
+         (STREAM
+          &OPTIONAL
+          (#:FORMAT-ARG47
+           (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                  "[~A~@[ [~A]~]] ~?~%" :OFFSET 2))
+          (#:FORMAT-ARG48
+           (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                  "[~A~@[ [~A]~]] ~?~%" :OFFSET 9))
+          (#:FORMAT-ARG49
+           (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                  "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+          (#:FORMAT-ARG50
+           (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                  "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+          &REST SB-FORMAT::ARGS))
+     #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1003AA2161}>
+     "2011-06-01 20:59:50"
+     :INFO
+     "~a~"
+     (#'GRE::TRY-IT))
+15: (FORMAT
+     #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1003AA2161}>
+     #<FUNCTION (LAMBDA #) {1005DD61C9}>)[:EXTERNAL]
+16: (HUNCHENTOOT::LOG-MESSAGE-TO-FILE :INFO "~a~")[:EXTERNAL]
+17: ((LAMBDA ()))
+18: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+      (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<HUNCHENTOOT:REQUEST {1003A9E571}>)
+19: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:REQUEST {1003A9E571}>)
+20: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1003A96BF1}>)
+21: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1003A96BF1}>)
+22: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+23: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+24: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+25: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (PROGN (QUICKLISP-CLIENT:QUICKLOAD "gre") (GRE:START-SERVER))
+     #<NULL-LEXENV>)
+26: (SWANK::EVAL-REGION
+     "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+27: ((LAMBDA ()))
+28: (SWANK::TRACK-PACKAGE #<CLOSURE (LAMBDA #) {10033DA529}>)
+29: (SWANK::CALL-WITH-RETRY-RESTART
+     "Retry SLIME REPL evaluation request."
+     #<CLOSURE (LAMBDA #) {10033DA449}>)
+30: (SWANK::CALL-WITH-BUFFER-SYNTAX NIL #<CLOSURE (LAMBDA #) {10033DA419}>)
+31: (SWANK::REPL-EVAL
+     "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+32: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (SWANK:LISTENER-EVAL "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+     #<NULL-LEXENV>)
+33: (SWANK:EVAL-FOR-EMACS
+     (SWANK:LISTENER-EVAL "(progn 
+           (ql:quickload \"gre\")
+           (gre:start-server))
+")
+     "COMMON-LISP-USER"
+     418)
+34: (SWANK::PROCESS-REQUESTS T)
+35: ((LAMBDA ()))
+36: ((LAMBDA ()))
+37: (SWANK-BACKEND::CALL-WITH-BREAK-HOOK
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {10033D7369}>)
+38: ((FLET SWANK-BACKEND:CALL-WITH-DEBUGGER-HOOK)
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {10033D7369}>)
+39: (SWANK::CALL-WITH-BINDINGS
+     ((*STANDARD-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*STANDARD-INPUT* . #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>)
+      (*TRACE-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*ERROR-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>)
+      (*DEBUG-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>)
+      (*QUERY-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>)
+      (*TERMINAL-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {1004C3EC41}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {1004C3ED01}>>))
+     #<CLOSURE (LAMBDA #) {10033D7389}>)
+40: (SWANK::HANDLE-REQUESTS #<SWANK::CONNECTION {1004BC0941}> T)
+41: ((LABELS SWANK-BACKEND::RUN) 7)
+42: (SB-IMPL::SUB-SUB-SERVE-EVENT NIL NIL)
+43: (SB-IMPL::SUB-SERVE-EVENT NIL NIL NIL)
+44: (SB-SYS:WAIT-UNTIL-FD-USABLE 0 :INPUT NIL)
+45: (SB-IMPL::REFILL-INPUT-BUFFER
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>)
+46: (SB-IMPL::INPUT-CHAR/UTF-8
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT)
+47: (READ-CHAR
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+48: (READ-CHAR
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+49: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     T)
+50: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     NIL)
+51: (READ #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}> NIL (NIL) NIL)
+52: (SB-IMPL::REPL-READ-FORM-FUN
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     #<unavailable argument>)
+53: (SB-IMPL::REPL-FUN NIL)
+54: ((LAMBDA ()))
+55: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {10038EEB09}>)
+56: (SB-IMPL::TOPLEVEL-REPL NIL)
+57: (SB-IMPL::TOPLEVEL-INIT)
+58: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-01 20:59:51 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:00:08 [INFO]] #'TRY-IT
+[2011-06-01 21:00:08 [ERROR]] The value #'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1004079E39}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1004079D71}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1004079D71}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {10040797E1}>)
+5: (SIGNAL #<TYPE-ERROR {10040797E1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001CD000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001CD000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:00:08 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:00:41 [INFO]] CONS
+[2011-06-01 21:00:41 [ERROR]] The value #'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003F33699}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003F335D1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003F335D1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003F33041}>)
+5: (SIGNAL #<TYPE-ERROR {1003F33041}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001CF000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001CF000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:00:41 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:01:09 [INFO]] FUNCTION
+[2011-06-01 21:01:09 [ERROR]] The value #'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {10045566D9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1004556611}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1004556611}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1004556081}>)
+5: (SIGNAL #<TYPE-ERROR {1004556081}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001D1000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001D1000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:01:09 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:01:26 [INFO]] TRY-IT
+[2011-06-01 21:01:26 [ERROR]] The value #'GRE::TRY-IT is not of type (OR FUNCTION SYMBOL).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002CCE6D9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002CCE611}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002CCE611}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1002CCE081}>)
+5: (SIGNAL #<TYPE-ERROR {1002CCE081}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001D3000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001D3000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:01:26 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:02:43 [ERROR]] The value 'GRE::TRY-IT is not of type SYMBOL.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003BC2D19}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003BC2C51}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003BC2C51}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003BC2671}>)
+5: (SIGNAL #<TYPE-ERROR {1003BC2671}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-SYMBOL-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001D5000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001D5000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:02:43 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:03:11 [INFO]] CONS
+[2011-06-01 21:03:11 [ERROR]] The value 'GRE::TRY-IT is not of type SYMBOL.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003FBF329}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003FBF261}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003FBF261}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003FBECB1}>)
+5: (SIGNAL #<TYPE-ERROR {1003FBECB1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-SYMBOL-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001D7000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001D7000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:03:11 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:03:38 [INFO]] TRY-IT
+[2011-06-01 21:03:38 [ERROR]] The value 'GRE::TRY-IT is not of type SYMBOL.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003EB85C9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003EB8501}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003EB8501}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003EB7F71}>)
+5: (SIGNAL #<TYPE-ERROR {1003EB7F71}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-SYMBOL-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001D9000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001D9000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:03:38 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:04:21 [INFO]] QUOTE
+[2011-06-01 21:04:21 [ERROR]] The value 'GRE::TRY-IT is not of type SYMBOL.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002ACA329}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002ACA261}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002ACA261}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1002AC9CB1}>)
+5: (SIGNAL #<TYPE-ERROR {1002AC9CB1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-SYMBOL-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001DB000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001DB000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:04:21 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:04:21 [INFO]] QUOTE
+[2011-06-01 21:04:21 [ERROR]] The value 'GRE::TRY-IT is not of type SYMBOL.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002F1B389}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002F1B2C1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002F1B2C1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1002F1ACF1}>)
+5: (SIGNAL #<TYPE-ERROR {1002F1ACF1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-SYMBOL-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001DD000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001DD000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:04:21 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:05:21 [ERROR]] The value GRE::TRY-IT is not of type LIST.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {100361EAD9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {100361EA11}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {100361EA11}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {100361E431}>)
+5: (SIGNAL #<TYPE-ERROR {100361E431}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-LIST-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE230)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001DF000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (143))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001DF000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-01 21:05:21 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:05:35 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:05:39 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:26:41 [ERROR]] The function GRE::TRY-IT is undefined.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {10027EC6B9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {10027EC5F1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {10027EC5F1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<UNDEFINED-FUNCTION TRY-IT {10027E3871}>)
+5: (SIGNAL #<UNDEFINED-FUNCTION TRY-IT {10027E3871}>)[:EXTERNAL]
+6: (ERROR UNDEFINED-FUNCTION)[:EXTERNAL]
+7: (SYMBOL-FUNCTION GRE::TRY-IT)
+8: ((LAMBDA ()))
+9: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+     (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+    #<unavailable argument>
+    #<unavailable argument>
+    #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+    #<HUNCHENTOOT:REQUEST {10027C92D1}>)
+10: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:REQUEST {10027C92D1}>)
+11: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {10037AD191}>)
+12: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {10037AD191}>)
+13: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+14: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+15: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+16: (INTERACTIVE-EVAL (GRE:START-SERVER))[:EXTERNAL]
+17: (SB-IMPL::REPL-FUN NIL)
+18: ((LAMBDA ()))
+19: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {100380DB09}>)
+20: (SB-IMPL::TOPLEVEL-REPL NIL)
+21: (SB-IMPL::TOPLEVEL-INIT)
+22: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-01 21:26:41 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:29:09 [ERROR]] The function GRE::TRY-IT is undefined.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002879459}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002879391}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002879391}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<UNDEFINED-FUNCTION TRY-IT {100286B5C1}>)
+5: (SIGNAL #<UNDEFINED-FUNCTION TRY-IT {100286B5C1}>)[:EXTERNAL]
+6: (ERROR UNDEFINED-FUNCTION)[:EXTERNAL]
+7: (SYMBOL-FUNCTION GRE::TRY-IT)
+8: ((LAMBDA ()))
+9: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+     (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+    #<unavailable argument>
+    #<unavailable argument>
+    #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+    #<HUNCHENTOOT:REQUEST {10027B2081}>)
+10: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:REQUEST {10027B2081}>)
+11: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {10052EFFB1}>)
+12: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {10052EFFB1}>)
+13: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+14: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+15: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+16: (INTERACTIVE-EVAL (GRE:START-SERVER))[:EXTERNAL]
+17: (SB-IMPL::REPL-FUN NIL)
+18: ((LAMBDA ()))
+19: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {100380DB09}>)
+20: (SB-IMPL::TOPLEVEL-REPL NIL)
+21: (SB-IMPL::TOPLEVEL-INIT)
+22: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-01 21:29:09 [INFO]] Default handler called for script /favicon.ico
+[2011-06-01 21:30:49 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:45:48 [INFO]] Default handler called for script /
+[2011-06-02 14:45:49 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:45:55 [INFO]] Default handler called for script /mod_user
+[2011-06-02 14:45:55 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:46:31 [INFO]] Default handler called for script /mod_user/
+[2011-06-02 14:46:31 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:46:40 [INFO]] Default handler called for script /mod_user/aou
+[2011-06-02 14:46:40 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:46:42 [INFO]] Default handler called for script /mod_usaeou
+[2011-06-02 14:46:42 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:46:50 [INFO]] Default handler called for script /hi
+[2011-06-02 14:46:50 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:47:32 [INFO]] Default handler called for script /hi
+[2011-06-02 14:47:32 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:47:33 [INFO]] Default handler called for script /hi
+[2011-06-02 14:47:33 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:47:50 [INFO]] awesome
+[2011-06-02 14:47:50 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:48:02 [ERROR]] NIL fell through ETYPECASE expression. Wanted one of (STRING SIMPLE-STRING).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1002F4CAB9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1002F4C9F1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1002F4C9F1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<SB-KERNEL:CASE-FAILURE {1002F42CF1}>)
+5: (SIGNAL #<SB-KERNEL:CASE-FAILURE {1002F42CF1}>)[:EXTERNAL]
+6: (ERROR SB-KERNEL:CASE-FAILURE)[:EXTERNAL]
+7: (SB-FORMAT::%FORMAT
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1002F410D1}>
+    NIL
+    NIL
+    NIL)
+8: ((LAMBDA
+        (STREAM
+         &OPTIONAL
+         (#:FORMAT-ARG47
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 2))
+         (#:FORMAT-ARG48
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 9))
+         (#:FORMAT-ARG49
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+         (#:FORMAT-ARG50
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+         &REST SB-FORMAT::ARGS))
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1002F410D1}>
+    "2011-06-02 14:48:02"
+    :INFO
+    NIL
+    NIL)
+9: (FORMAT
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {1002F410D1}>
+    #<FUNCTION (LAMBDA #) {1005D931C9}>)[:EXTERNAL]
+10: (HUNCHENTOOT::LOG-MESSAGE-TO-FILE :INFO NIL)[:EXTERNAL]
+11: (GRE::MOD-WORD-HDL)
+12: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+      (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<HUNCHENTOOT:REQUEST {1002F3CC11}>)
+13: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:REQUEST {1002F3CC11}>)
+14: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1002E0DB11}>)
+15: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1002E0DB11}>)
+16: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+17: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+18: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+19: (SWANK::EVAL-REGION
+     "(gre:start-server)
+")
+20: ((LAMBDA ()))
+21: (SWANK::TRACK-PACKAGE #<CLOSURE (LAMBDA #) {1002E07C89}>)
+22: (SWANK::CALL-WITH-RETRY-RESTART
+     "Retry SLIME REPL evaluation request."
+     #<CLOSURE (LAMBDA #) {1002E07BA9}>)
+23: (SWANK::CALL-WITH-BUFFER-SYNTAX NIL #<CLOSURE (LAMBDA #) {1002E07B79}>)
+24: (SWANK::REPL-EVAL
+     "(gre:start-server)
+")
+25: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (SWANK:LISTENER-EVAL "(gre:start-server)
+")
+     #<NULL-LEXENV>)
+26: (SWANK:EVAL-FOR-EMACS
+     (SWANK:LISTENER-EVAL "(gre:start-server)
+")
+     "COMMON-LISP-USER"
+     165)
+27: (SWANK::PROCESS-REQUESTS T)
+28: ((LAMBDA ()))
+29: ((LAMBDA ()))
+30: (SWANK-BACKEND::CALL-WITH-BREAK-HOOK
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {1002DF5369}>)
+31: ((FLET SWANK-BACKEND:CALL-WITH-DEBUGGER-HOOK)
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {1002DF5369}>)
+32: (SWANK::CALL-WITH-BINDINGS
+     ((*STANDARD-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>)
+      (*STANDARD-INPUT* . #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>)
+      (*TRACE-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>)
+      (*ERROR-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>)
+      (*DEBUG-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>>)
+      (*QUERY-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>>)
+      (*TERMINAL-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>>))
+     #<CLOSURE (LAMBDA #) {1002DF5389}>)
+33: (SWANK::HANDLE-REQUESTS #<SWANK::CONNECTION {1002DF6391}> T)
+34: ((LABELS SWANK-BACKEND::RUN) 7)
+35: (SB-IMPL::SUB-SUB-SERVE-EVENT NIL NIL)
+36: (SB-IMPL::SUB-SERVE-EVENT NIL NIL NIL)
+37: (SB-SYS:WAIT-UNTIL-FD-USABLE 0 :INPUT NIL)
+38: (SB-IMPL::REFILL-INPUT-BUFFER
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>)
+39: (SB-IMPL::INPUT-CHAR/UTF-8
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT)
+40: (READ-CHAR
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+41: (READ-CHAR
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+42: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     T)
+43: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     NIL)
+44: (READ #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}> NIL (NIL) NIL)
+45: (SB-IMPL::REPL-READ-FORM-FUN
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     #<unavailable argument>)
+46: (SB-IMPL::REPL-FUN NIL)
+47: ((LAMBDA ()))
+48: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {10038EFB09}>)
+49: (SB-IMPL::TOPLEVEL-REPL NIL)
+50: (SB-IMPL::TOPLEVEL-INIT)
+51: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-02 14:48:02 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:48:05 [ERROR]] NIL fell through ETYPECASE expression. Wanted one of (STRING SIMPLE-STRING).
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {100306C2B9}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {100306C1F1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {100306C1F1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<SB-KERNEL:CASE-FAILURE {100306BCF1}>)
+5: (SIGNAL #<SB-KERNEL:CASE-FAILURE {100306BCF1}>)[:EXTERNAL]
+6: (ERROR SB-KERNEL:CASE-FAILURE)[:EXTERNAL]
+7: (SB-FORMAT::%FORMAT
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {100306A0D1}>
+    NIL
+    NIL
+    NIL)
+8: ((LAMBDA
+        (STREAM
+         &OPTIONAL
+         (#:FORMAT-ARG47
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 2))
+         (#:FORMAT-ARG48
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 9))
+         (#:FORMAT-ARG49
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+         (#:FORMAT-ARG50
+          (ERROR ??? :COMPLAINT "required argument missing" :CONTROL-STRING
+                 "[~A~@[ [~A]~]] ~?~%" :OFFSET 16))
+         &REST SB-FORMAT::ARGS))
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {100306A0D1}>
+    "2011-06-02 14:48:05"
+    :INFO
+    NIL
+    NIL)
+9: (FORMAT
+    #<FLEXI-STREAMS:FLEXI-OUTPUT-STREAM {100306A0D1}>
+    #<FUNCTION (LAMBDA #) {1005D931C9}>)[:EXTERNAL]
+10: (HUNCHENTOOT::LOG-MESSAGE-TO-FILE :INFO NIL)[:EXTERNAL]
+11: (GRE::MOD-WORD-HDL)
+12: ((SB-PCL::FAST-METHOD HUNCHENTOOT:HANDLE-REQUEST
+      (HUNCHENTOOT:ACCEPTOR HUNCHENTOOT:REQUEST))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<HUNCHENTOOT:REQUEST {1003065C81}>)
+13: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-REQUEST (T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:REQUEST {1003065C81}>)
+14: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1002E0DB11}>)
+15: ((SB-PCL::FAST-METHOD HUNCHENTOOT:PROCESS-CONNECTION :AROUND
+      (HUNCHENTOOT:ACCEPTOR T))
+     #<unavailable argument>
+     #S(SB-PCL::FAST-METHOD-CALL
+        :FUNCTION #<FUNCTION #>
+        :PV NIL
+        :NEXT-METHOD-CALL NIL
+        :ARG-INFO (2))
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>
+     #<USOCKET:STREAM-USOCKET {1002E0DB11}>)
+16: ((SB-PCL::FAST-METHOD HUNCHENTOOT:ACCEPT-CONNECTIONS
+      (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+17: ((SB-PCL::FAST-METHOD HUNCHENTOOT:START (HUNCHENTOOT:ACCEPTOR))
+     #<unavailable argument>
+     #<unavailable argument>
+     #<HUNCHENTOOT:ACCEPTOR (host *, port 8080)>)
+18: (SB-INT:SIMPLE-EVAL-IN-LEXENV (GRE:START-SERVER) #<NULL-LEXENV>)
+19: (SWANK::EVAL-REGION
+     "(gre:start-server)
+")
+20: ((LAMBDA ()))
+21: (SWANK::TRACK-PACKAGE #<CLOSURE (LAMBDA #) {1002E07C89}>)
+22: (SWANK::CALL-WITH-RETRY-RESTART
+     "Retry SLIME REPL evaluation request."
+     #<CLOSURE (LAMBDA #) {1002E07BA9}>)
+23: (SWANK::CALL-WITH-BUFFER-SYNTAX NIL #<CLOSURE (LAMBDA #) {1002E07B79}>)
+24: (SWANK::REPL-EVAL
+     "(gre:start-server)
+")
+25: (SB-INT:SIMPLE-EVAL-IN-LEXENV
+     (SWANK:LISTENER-EVAL "(gre:start-server)
+")
+     #<NULL-LEXENV>)
+26: (SWANK:EVAL-FOR-EMACS
+     (SWANK:LISTENER-EVAL "(gre:start-server)
+")
+     "COMMON-LISP-USER"
+     165)
+27: (SWANK::PROCESS-REQUESTS T)
+28: ((LAMBDA ()))
+29: ((LAMBDA ()))
+30: (SWANK-BACKEND::CALL-WITH-BREAK-HOOK
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {1002DF5369}>)
+31: ((FLET SWANK-BACKEND:CALL-WITH-DEBUGGER-HOOK)
+     #<FUNCTION SWANK:SWANK-DEBUGGER-HOOK>
+     #<CLOSURE (LAMBDA #) {1002DF5369}>)
+32: (SWANK::CALL-WITH-BINDINGS
+     ((*STANDARD-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>)
+      (*STANDARD-INPUT* . #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>)
+      (*TRACE-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>)
+      (*ERROR-OUTPUT* . #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>)
+      (*DEBUG-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>>)
+      (*QUERY-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>>)
+      (*TERMINAL-IO*
+       . #<TWO-WAY-STREAM
+           :INPUT-STREAM #<SWANK-BACKEND::SLIME-INPUT-STREAM {100319A9C1}>
+           :OUTPUT-STREAM #<SWANK-BACKEND::SLIME-OUTPUT-STREAM {10039DBFA1}>>))
+     #<CLOSURE (LAMBDA #) {1002DF5389}>)
+33: (SWANK::HANDLE-REQUESTS #<SWANK::CONNECTION {1002DF6391}> T)
+34: ((LABELS SWANK-BACKEND::RUN) 7)
+35: (SB-IMPL::SUB-SUB-SERVE-EVENT NIL NIL)
+36: (SB-IMPL::SUB-SERVE-EVENT NIL NIL NIL)
+37: (SB-SYS:WAIT-UNTIL-FD-USABLE 0 :INPUT NIL)
+38: (SB-IMPL::REFILL-INPUT-BUFFER
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>)
+39: (SB-IMPL::INPUT-CHAR/UTF-8
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT)
+40: (READ-CHAR
+     #<SB-SYS:FD-STREAM for "standard input" {10026E9E61}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+41: (READ-CHAR
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     #:EOF-OBJECT
+     #<unused argument>)
+42: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     T)
+43: (SB-IMPL::%READ-PRESERVING-WHITESPACE
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     NIL
+     (NIL)
+     NIL)
+44: (READ #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}> NIL (NIL) NIL)
+45: (SB-IMPL::REPL-READ-FORM-FUN
+     #<SYNONYM-STREAM :SYMBOL SB-SYS:*STDIN* {1000158331}>
+     #<unavailable argument>)
+46: (SB-IMPL::REPL-FUN NIL)
+47: ((LAMBDA ()))
+48: (SB-IMPL::%WITH-REBOUND-IO-SYNTAX #<CLOSURE (LAMBDA #) {10038EFB09}>)
+49: (SB-IMPL::TOPLEVEL-REPL NIL)
+50: (SB-IMPL::TOPLEVEL-INIT)
+51: ((LABELS SB-IMPL::RESTART-LISP))
+
+[2011-06-02 14:48:05 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:49:11 [ERROR]] The value NIL is not of type GRE::VWORD.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003D74E89}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003D74DC1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003D74DC1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003D747E1}>)
+5: (SIGNAL #<TYPE-ERROR {1003D747E1}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE1F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001B5000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (527 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001B5000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-02 14:49:11 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:52:34 [ERROR]] The value NIL is not of type GRE::VWORD.
+0: (SB-DEBUG::MAP-BACKTRACE #<CLOSURE (LAMBDA #) {1003FB8289}>)[:EXTERNAL]
+1: (BACKTRACE 1152921504606846975 #<SB-IMPL::STRING-OUTPUT-STREAM {1003FB81C1}>)
+2: (TRIVIAL-BACKTRACE:PRINT-BACKTRACE-TO-STREAM
+    #<SB-IMPL::STRING-OUTPUT-STREAM {1003FB81C1}>)
+3: (HUNCHENTOOT::GET-BACKTRACE)
+4: ((FLET #:LAMBDA272) #<TYPE-ERROR {1003FB7C21}>)
+5: (SIGNAL #<TYPE-ERROR {1003FB7C21}>)[:EXTERNAL]
+6: (ERROR TYPE-ERROR)[:EXTERNAL]
+7: (SB-KERNEL::OBJECT-NOT-TYPE-ERROR-HANDLER
+    #<unavailable argument>
+    #.(SB-SYS:INT-SAP #X031FE0F0)
+    #<SB-ALIEN-INTERNALS:ALIEN-VALUE :SAP #X001B7000 :TYPE (*
+                                                            (STRUCT
+                                                             SB-VM::OS-CONTEXT-T-STRUCT))>
+    (527 15))
+8: (SB-KERNEL:INTERNAL-ERROR
+    #.(SB-SYS:INT-SAP #X001B7000)
+    #<unavailable argument>)
+9: ("foreign function: call_into_lisp")
+10: ("foreign function: funcall2")
+11: ("foreign function: interrupt_internal_error")
+12: ("foreign function: signal_emulation_wrapper")
+13: ("foreign function: stack_allocation_recover")
+
+[2011-06-02 14:52:34 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:55:08 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:56:10 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:56:22 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:56:29 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:56:35 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:56:59 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:57:03 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 14:57:17 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:24:28 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:25:01 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:26:33 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:31:35 [INFO]] Default handler called for script /static/
+[2011-06-02 15:31:36 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:31:42 [INFO]] Default handler called for script /static/README.txt
+[2011-06-02 15:31:42 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:33:08 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:40:01 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 15:40:06 [INFO]] Default handler called for script /favicon.ico
+[2011-06-02 21:35:43 [ERROR]] Error while processing connection: couldn't read from #<SB-SYS:FD-STREAM for "a socket" {1003442931}>:
+  Connection reset by peer
+[2011-06-02 21:39:37 [ERROR]] Error while processing connection: couldn't read from #<SB-SYS:FD-STREAM for "a socket" {1004079211}>:
+  Connection reset by peer
+[2011-06-02 21:41:14 [ERROR]] Error while processing connection: couldn't read from #<SB-SYS:FD-STREAM for "a socket" {1004794771}>:
+  Connection reset by peer
+[2011-06-02 21:42:18 [ERROR]] Error while processing connection: couldn't read from #<SB-SYS:FD-STREAM for "a socket" {1002BD0A11}>:
+  Connection reset by peer
+[2011-06-02 21:46:06 [ERROR]] Error while processing connection: couldn't read from #<SB-SYS:FD-STREAM for "a socket" {1003E54691}>:
+  Connection reset by peer

@@ -3,6 +3,9 @@
 (defpackage #:gre
   (:use #:cl 
         #:cl-ppcre
+        #:json
+        #:sqlite
         #:hunchentoot)
-  (:export #:start-server))
+  (:export #:start-server
+           #:get-word))
 

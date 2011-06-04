@@ -1,9 +1,17 @@
+(in-package #:gre)
+
 (declaim (optimize (speed 0) (safety 3) (debug 3)))
 
-(defstruct vword
-  id word def sentence hint)
+(defconstant +db-file+ "/Users/mattforbes/src/lisp/gre/words.db")
 
-(defun get-db (&optional (dbfile "words.db"))
+(defstruct vword 
+  id 
+  word 
+  definition 
+  sentence 
+  hint)
+
+(defun get-db (&optional (dbfile +db-file+))
   (let ((db (connect dbfile)))
     (when (not (member '("words")
                        (get-tables db)
@@ -28,6 +36,20 @@ hint text)"))
           (progn ,@body)
        (disconnect ,db))))
 
+(defun get-word (word)
+  (with-words-db (db)
+    (multiple-value-bind (id definition sentence hint)
+        (execute-one-row-m-v db "select id, definition, sentence, hint 
+from words 
+where word=?" word)
+      (when id
+        (make-vword :id id
+                    :word word
+                    :definition definition
+                    :sentence sentence
+                    :hint hint)))))
+      
+      
 (defun insert-word (word definition &key (sentence nil) (hint nil))
   (with-words-db (db)
     (execute-non-query db "insert into words (word, definition, sentence, hint) values(?, ?, ?, ?)" 
@@ -36,8 +58,6 @@ hint text)"))
 (defun delete-word (word)
   (with-words-db (db)
     (execute-non-query db "delete from words where word=?" word)))
-
-    
 
 (defun update-word (word &key definition sentence hint)
   (let (setters)
@@ -60,7 +80,7 @@ hint text)"))
                 (destructuring-bind (i w d s h) row
                   (make-vword :id i
                              :word w
-                             :def d
+                             :definition d
                              :sentence s
                              :hint h)))
             (execute-to-list db "select * from words;"))))
